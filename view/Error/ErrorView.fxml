@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+
+
+<VBox alignment="CENTER" styleClass="background" prefHeight="250.0" prefWidth="400.0" spacing="20" 
+    xmlns:fx="http://javafx.com/fxml/1" 
+    fx:controller="controller.Error.ErrorController">
+    
+    <ImageView fitWidth="350" fitHeight="125"> 
+      <image>
+        <Image url="/image/error.png"/>
+      </image>
+    </ImageView>
+
+        <Separator/>
+          <Label text="Error" styleClass="heading"/>
+        <Separator/>
+
+      <Label fx:id="exceptionLabel" styleClass="errorLabel"/>
+      <Label fx:id="errorMessageLabel"/>
+
+      <GridPane alignment="BOTTOM_CENTER">
+      <columnConstraints>
+        <ColumnConstraints percentWidth="90" hgrow="ALWAYS"/>
+      </columnConstraints>
+
+        <Button fx:id="closeBtn" text="Close" GridPane.columnIndex="0" onAction="#handleClose" maxWidth="Infinity"/>
+
+
+      </GridPane>
+
+      <stylesheets>
+            <URL value="@/view/style.css"/>
+      </stylesheets>
+</VBox>
