@@ -1,7 +1,7 @@
 package controller;
 
 import au.edu.uts.ap.javafx.Controller;
-import au.edu.uts.ap.javafx.ViewLoader;
+// import au.edu.uts.ap.javafx.ViewLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.control.*;
@@ -21,9 +21,8 @@ public class AgencyController extends Controller<Agency>{
 
     public void initialize(){
         if(model!=null){
-            String welcome = model.getLoggedInUser().toString("Prog2 Travel Agency");
-            welcomeTxt.setText(welcome);
-            
+            String welcome = model.getLoggedInUser().toString() +"Prog2 Travel Agency";
+            welcomeTxt.setText(welcome);           
         }
     }
 
@@ -40,7 +39,7 @@ public class AgencyController extends Controller<Agency>{
     @FXML private void handleClose(){
         stage.close();
     }
-    
+
     public Agency getAgency(){
         return model;
     }
