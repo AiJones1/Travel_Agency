@@ -9,6 +9,36 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="600.0" spacing="20" 
+xmlns:fx="http://javafx.com/fxml/1">
+
+<ImageView fitWidth="790" fitHeight="225">
+    <image>
+        <Image url="/image/destination.png"/>
+    </image>
+</ImageView>
+
+<Separator/>
+<Label/>
+<Separator/>
+
+<GridPane alignment="BOTTOM_CENTER">
+    <columnConstraints>
+        <ColumnConstraints percentWidth="20" hgrow="ALWAYS"/>
+        <ColumnConstraints percentWidth="20" hgrow="ALWAYS"/>
+        <ColumnConstraints percentWidth="20" hgrow="ALWAYS"/>
+        <ColumnConstraints percentWidth="20" hgrow="ALWAYS"/>
+        <ColumnConstraints percentWidth="20" hgrow="ALWAYS"/>
+    </columnConstraints>
+        <Button text="View All Destinations" GridPane.columnIndex="0" maxWidth="Infinity"/>
+        <Button text="View Filtered Destinations" GridPane.columnIndex="1" maxWidth="Infinity" />
+        <Button text="Add Destination" GridPane.columnIndex="2" maxWidth="Infinity" />
+        <Button text="Remove Destination" GridPane.columnIndex="3" maxWidth="Infinity"/>
+        <Button text="Close" GridPane.columnIndex="4" maxWidth="Infinity"/>
+
+</GridPane>
+    <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets>
         
 </VBox>

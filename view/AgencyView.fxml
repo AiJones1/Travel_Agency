@@ -3,24 +3,41 @@
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
-<?import javafx.geometry.Pos?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
 
 <VBox alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="800.0" spacing="20" 
 xmlns:fx="http://javafx.com/fxml/1"
 fx:controller="controller.AgencyController">
         
-    <ImageView fitWidth="350" fitHeight="125"> 
+    <ImageView fitWidth="790" fitHeight="225"> 
       <image>
         <Image url="/image/agency.png"/>
       </image>
     </ImageView>
 
     <Separator/>
-        <Label text="Login" styleClass="heading"/>
+    <Label fx:id="welcomeTxt" styleClass="heading"/>
+    <Separator/>
 
-        <Separator/>
+    <GridPane alignment="BOTTOM_CENTER">
+      <columnConstraints>
+        <ColumnConstraints percentWidth="25" hgrow="ALWAYS"/>
+        <ColumnConstraints percentWidth="25" hgrow="ALWAYS"/>
+        <ColumnConstraints percentWidth="25" hgrow="ALWAYS"/>
+        <ColumnConstraints percentWidth="25" hgrow="ALWAYS"/>
+      </columnConstraints>
+      <Button fx:id="exploreFlightsBtn" text="Explore Flights" onAction="#exploreFlights" GridPane.columnIndex="0" maxWidth="Infinity"/>
+      <Button fx:id="exploreDestinationsBtn" text="Explore Destinations" onAction="#exploreDestinations" GridPane.columnIndex="1" maxWidth="Infinity"/>
+      <Button fx:id="bookTripBtn" text="Book a Trip" onAction="#bookTrip" GridPane.columnIndex="2" maxWidth="Infinity"/>
+      <Button fx:id="exitBtn" text="Exit" onAction="#handleClose" GridPane.columnIndex="3" maxWidth="Infinity"/>
+    </GridPane>
+
+      <stylesheets>
+        <URL value="@style.css"/>
+      </stylesheets>
 </VBox>

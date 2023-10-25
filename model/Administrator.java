@@ -25,8 +25,8 @@ public class Administrator {
         return this.name.get();
     }
 
-    public String toString(String section){
-        return "Hi " +name.get() +", Welcome to the " +section;
+    public String toString(){
+        return "Hi " +name.get() +", Welcome to the ";
     }
 
     
