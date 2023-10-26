@@ -1,13 +1,11 @@
 package controller;
    
-
-
-
 import au.edu.uts.ap.javafx.Controller;
 import au.edu.uts.ap.javafx.ViewLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import model.Agency;
 import model.Exceptions.ErrorModel;
@@ -34,7 +32,9 @@ public class LoginController extends Controller<Agency>{
                 boolean isUser = model.getAdministrators().hasAdministrator(usrName, pw);
                 if(isUser){
                     model.setLoggedInUser(model.getAdministrators().getAdministrator(usrName, pw));
-                    ViewLoader.showStage(model, "/view/AgencyView.fxml", "Prog2 Travel Agency", new Stage());  
+                    Stage stage1 = new Stage();
+                    stage1.getIcons().add(new Image("/image/agency_icon.png"));
+                    ViewLoader.showStage(model, "/view/AgencyView.fxml", "Prog2 Travel Agency", stage1);  
                     stage.close(); 
                 }   
             }catch(Exception e){

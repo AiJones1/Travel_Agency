@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="600.0" spacing="20" 
+<VBox alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="800.0" spacing="20" 
 xmlns:fx="http://javafx.com/fxml/1"
 fx:controller="controller.Flights.ExploreFlightsController">
 
@@ -32,10 +32,10 @@ fx:controller="controller.Flights.ExploreFlightsController">
         <ColumnConstraints percentWidth="20" hgrow="ALWAYS"/>
         <ColumnConstraints percentWidth="20" hgrow="ALWAYS"/>
       </columnConstraints>
-      <Button fx:id="viewFlightsBtn" text="View All Flights"  GridPane.columnIndex="0" maxWidth="Infinity"/>
-      <Button fx:id="viewFitleredFlightsBtn" text="View Filtered Flights" GridPane.columnIndex="1" maxWidth="Infinity"/>
-      <Button fx:id="addFlightBtn" text="Add Flight" GridPane.columnIndex="2" maxWidth="Infinity"/>
-      <Button fx:id="removeFlightsBtn" text="Remove Flight" GridPane.columnIndex="3" maxWidth="Infinity"/>
+      <Button fx:id="viewFlightsBtn" text="View All Flights" onAction="#viewFlights" GridPane.columnIndex="0" maxWidth="Infinity"/>
+      <Button fx:id="viewFitleredFlightsBtn" text="View Filtered Flights" onAction="#viewFilteredFlights" GridPane.columnIndex="1" maxWidth="Infinity"/>
+      <Button fx:id="addFlightBtn" text="Add Flight" onAction="#addNewFlight" GridPane.columnIndex="2" maxWidth="Infinity"/>
+      <Button fx:id="removeFlightsBtn" text="Remove Flight" onAction="#removeFromFlights" GridPane.columnIndex="3" maxWidth="Infinity"/>
       <Button fx:id="closeBtn" text="Close" onAction="#handleClose" GridPane.columnIndex="4" maxWidth="Infinity"/>
     </GridPane>
 

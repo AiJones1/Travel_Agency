@@ -33,10 +33,7 @@
       <columnConstraints>
         <ColumnConstraints percentWidth="90" hgrow="ALWAYS"/>
       </columnConstraints>
-
         <Button fx:id="closeBtn" text="Close" GridPane.columnIndex="0" onAction="#handleClose" maxWidth="Infinity"/>
-
-
       </GridPane>
 
       <stylesheets>

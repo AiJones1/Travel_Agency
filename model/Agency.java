@@ -1,5 +1,8 @@
 package model;
 
+// import javafx.beans.Observable;
+// import javafx.collections.ObservableList;
+
 public class Agency {
 
     private Administrator loggedInUser;
@@ -35,4 +38,15 @@ public class Agency {
     public void setLoggedInUser(Administrator administrator) {
         this.loggedInUser = administrator;
     }
+
+    public void setFlights(Flights flights){
+        this.flights = flights;
+    }
+
+    public void setDestinations(Destinations destinations){
+        this.destinations = destinations;
+    }
+
+
+
 }

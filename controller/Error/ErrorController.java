@@ -28,7 +28,7 @@ public class ErrorController extends Controller<ErrorModel>{
     }
 
     
-    public ErrorModel getErrorModel(){
+    public final ErrorModel getErrorModel(){
         return model;
     }
 }

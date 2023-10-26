@@ -9,6 +9,55 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="800.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
-        
+<VBox alignment="CENTER" styleClass="background" prefHeight="800.0" prefWidth="600.0" spacing="20" 
+xmlns:fx="http://javafx.com/fxml/1"
+fx:controller="controller.Flights.DisplayFlightsController">
+    <ImageView fitWidth="590" fitHeight="175"> 
+      <image>
+        <Image url="/image/flight.png"/>
+      </image>
+    </ImageView>
+
+<Separator/>
+    <Label text="Flights" styleClass="heading"/>
+<Separator/>
+<Label text="Country"/>
+
+    <HBox alignment="center">
+        <TextField fx:id="searchCountryTf" HBox.hgrow="always"/>
+    </HBox>
+
+    <TableView fx:id="flightsTv" prefWidth="400" prefHeight="600">
+        <placeholder><Label text="No Flights"/></placeholder>
+        <columns>
+            <TableColumn fx:id="airlineClm" text="Airline">
+
+            </TableColumn>
+            <TableColumn fx:id="flightNoClm" text="Flight Number">
+
+            </TableColumn>
+            <TableColumn fx:id="takeoffClm" text="Takeoff Country">
+
+            </TableColumn>
+            <TableColumn fx:id="landingClm" text="Landing Country">
+
+            </TableColumn>
+            <TableColumn fx:id="costClm" text="Cost">
+            </TableColumn>
+
+            
+        </columns>
+    </TableView>
+
+
+      <GridPane alignment="BOTTOM_CENTER">
+      <columnConstraints>
+        <ColumnConstraints percentWidth="90" hgrow="ALWAYS"/>
+      </columnConstraints>
+        <Button fx:id="closeBtn" text="Close" GridPane.columnIndex="0" onAction="#handleClose" maxWidth="Infinity"/>
+      </GridPane>
+
+    <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets>       
 </VBox>
