@@ -10,6 +10,40 @@
 <?import javafx.scene.image.*?>
 <?import javafx.geometry.Insets?>  
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="700.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
-           
+
+<VBox alignment="CENTER" styleClass="background" prefHeight="700.0" prefWidth="600.0" spacing="20" 
+xmlns:fx="http://javafx.com/fxml/1"
+fx:controller="controller.Destinations.DisplayDestinationsController">
+
+    <ImageView fitWidth="690" fitHeight="225">
+    <image>
+        <Image url="/image/destination.png"/>
+    </image>
+</ImageView>
+    <TextField fx:id="searchCountryTf" visible="false"/>
+
+    <Separator/>
+        <Label text="Destinations" styleClass="heading"/>
+    <Separator/>
+    <TableView fx:id="destinationsTv" prefWidth="400" prefHeight="600">
+        <placeholder><Label text="No Destinations"/></placeholder>
+
+        <columns>
+            <TableColumn fx:id="nameClm" text="Name:" prefWidth="${destinationsTv.width*0.5}"/>
+            <TableColumn fx:id="countryClm" text="Country:" prefWidth="${destinationsTv.width*0.5}"/>
+        </columns>
+
+
+    </TableView>
+
+      <GridPane alignment="BOTTOM_CENTER">
+      <columnConstraints>
+        <ColumnConstraints percentWidth="100" hgrow="ALWAYS"/>
+      </columnConstraints>
+        <Button fx:id="closeBtn" text="Close" GridPane.columnIndex="0" onAction="#handleClose" maxWidth="Infinity"/>
+      </GridPane>
+
+        <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets> 
 </VBox>

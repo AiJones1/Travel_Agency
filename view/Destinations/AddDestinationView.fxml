@@ -9,7 +9,40 @@
 <?import javafx.scene.*?>	
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="420.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
-            
+<VBox alignment="CENTER" styleClass="background" prefHeight="420.0" prefWidth="600.0" spacing="20" 
+xmlns:fx="http://javafx.com/fxml/1"
+fx:controller="controller.Destinations.ModifyDestinationsController">
+
+<ImageView fitWidth="790" fitHeight="225">
+    <image>
+        <Image url="/image/destination.png"/>
+    </image>
+</ImageView>
+
+<Separator/>
+    <Label text="Add a Destination" styleClass="heading"/>
+<Separator/>
+
+
+
+<GridPane alignment="CENTER">
+    <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <TextField fx:id="destinationNameTf" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+    <Label text="Country:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField fx:id="destinationCountryTf" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+</GridPane>
+
+    <GridPane alignment="BOTTOM_CENTER">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="50" hgrow="ALWAYS"/>
+            <ColumnConstraints percentWidth="50" hgrow="ALWAYS"/>
+        </columnConstraints>
+        <Button fx:id="modifyDestinationBtn" disable="true" text="Add a Destination" GridPane.columnIndex="0" onAction="#handleAddDestination" maxWidth="Infinity"/>
+        <Button fx:id="closeBtn" text="Close" GridPane.columnIndex="1" onAction="#handleClose" maxWidth="Infinity"/>
+    </GridPane>
+
+    <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets>         
         
 </VBox>

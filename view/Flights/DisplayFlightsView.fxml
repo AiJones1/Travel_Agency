@@ -20,7 +20,7 @@ fx:controller="controller.Flights.DisplayFlightsController">
         <Image url="/image/flight.png"/>
       </image>
     </ImageView>
-
+    <TextField fx:id="searchCountryTf" visible="false"/>
 <Separator/>
     <Label text="Flights" styleClass="heading"/>
 <Separator/>
@@ -28,19 +28,19 @@ fx:controller="controller.Flights.DisplayFlightsController">
     <TableView fx:id="flightsTv" prefWidth="400" prefHeight="600">
         <placeholder><Label text="No Flights"/></placeholder>
         <columns>
-            <TableColumn fx:id="airlineClm" text="Airline">
+            <TableColumn fx:id="airlineClm" text="Airline" prefWidth="${flightsTv.width*0.2}">
 
             </TableColumn>
-            <TableColumn fx:id="flightNoClm" text="Flight Number">
+            <TableColumn fx:id="flightNoClm" text="Flight Number" prefWidth="${flightsTv.width*0.2}">
 
             </TableColumn>
-            <TableColumn fx:id="takeoffClm" text="Takeoff Country">
+            <TableColumn fx:id="takeoffClm" text="Takeoff Country" prefWidth="${flightsTv.width*0.2}">
 
             </TableColumn>
-            <TableColumn fx:id="landingClm" text="Landing Country">
+            <TableColumn fx:id="landingClm" text="Landing Country" prefWidth="${flightsTv.width*0.2}">
 
             </TableColumn>
-            <TableColumn fx:id="costClm" text="Cost">
+            <TableColumn fx:id="costClm" text="Cost" prefWidth="${flightsTv.width*0.2}">
             </TableColumn>
 
             

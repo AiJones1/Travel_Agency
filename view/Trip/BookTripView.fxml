@@ -9,6 +9,30 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="600.0" spacing="20" 
+xmlns:fx="http://javafx.com/fxml/1"
+fx:controller="controller.Trip.BookTripController">
+
+    <ImageView fitWidth="790" fitHeight="225">
+        <image>
+            <Image url="/image/trip.png"/>
+        </image>
+    </ImageView>
+
+    <Separator/>
+        <Label fx:id="welcomeTxt" styleClass="heading" />
+    <Separator/>
+
+    <HBox alignment="bottom_center">
+        <Button fx:id="addDestinationBtn" onAction="#handleAddDestination" text="Add Destination" MaxWidth="200" HBox.hgrow="always"/>
+        <Button fx:id="removeDestinationBtn" onAction="#handleRemoveDestination" text="Remove Destination" MaxWidth="200" HBox.hgrow="always"/>
+        <Button fx:id="addConnectingFlightsBtn" onAction="#handleAddConnectingFlights" text="Add Connecting Flights" MaxWidth="200" HBox.hgrow="always"/>
+        <Button fx:id="viewTripBtn" onAction="#handleViewTrip" text="View Trip" MaxWidth="200" HBox.hgrow="always" />
+        <Button fx:id="closeBtn" onAction="#handleClose" text="Close" MaxWidth="200" HBox.hgrow="always"/>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets>  
 
 </VBox>

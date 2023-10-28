@@ -10,7 +10,8 @@
 <?import javafx.scene.control.*?>
 
 <VBox alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="600.0" spacing="20" 
-xmlns:fx="http://javafx.com/fxml/1">
+xmlns:fx="http://javafx.com/fxml/1"
+fx:controller="controller.Destinations.ExploreDestinationsController">
 
 <ImageView fitWidth="790" fitHeight="225">
     <image>
@@ -19,7 +20,7 @@ xmlns:fx="http://javafx.com/fxml/1">
 </ImageView>
 
 <Separator/>
-<Label/>
+<Label fx:id="desWelcomeTxt" styleClass="heading"/>
 <Separator/>
 
 <GridPane alignment="BOTTOM_CENTER">
@@ -30,11 +31,11 @@ xmlns:fx="http://javafx.com/fxml/1">
         <ColumnConstraints percentWidth="20" hgrow="ALWAYS"/>
         <ColumnConstraints percentWidth="20" hgrow="ALWAYS"/>
     </columnConstraints>
-        <Button text="View All Destinations" GridPane.columnIndex="0" maxWidth="Infinity"/>
-        <Button text="View Filtered Destinations" GridPane.columnIndex="1" maxWidth="Infinity" />
-        <Button text="Add Destination" GridPane.columnIndex="2" maxWidth="Infinity" />
-        <Button text="Remove Destination" GridPane.columnIndex="3" maxWidth="Infinity"/>
-        <Button text="Close" GridPane.columnIndex="4" maxWidth="Infinity"/>
+        <Button text="View All Destinations" fx:id="viewDestinationsBtn" onAction="#handleViewDestination" GridPane.columnIndex="0" maxWidth="Infinity"/>
+        <Button text="View Filtered Destinations" fx:id="viewFilteredDestinationsBtn" onAction="#handleViewFliteredDestinations" GridPane.columnIndex="1" maxWidth="Infinity" />
+        <Button text="Add Destination" fx:id="addDestinationBtn" onAction="#handleAddDestination" GridPane.columnIndex="2" maxWidth="Infinity" />
+        <Button text="Remove Destination" fx:id="removeDestinationBtn" onAction="#handleRemoveDestination" GridPane.columnIndex="3" maxWidth="Infinity"/>
+        <Button text="Close" fx:id="closebtn" onAction="#handleClose" GridPane.columnIndex="4" maxWidth="Infinity"/>
 
 </GridPane>
     <stylesheets>

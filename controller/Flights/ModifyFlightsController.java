@@ -12,8 +12,7 @@ import model.Exceptions.ErrorModel;
 public class ModifyFlightsController extends Controller<Agency>{
 
 
-    @FXML private Button closeBtn;
-    @FXML private Button addBtn;
+    @FXML private Button modifyFlightBtn;
     @FXML private TextField airlineTf;
     @FXML private TextField flightNoTf;
     @FXML private TextField takeoffTf;
@@ -21,7 +20,6 @@ public class ModifyFlightsController extends Controller<Agency>{
     @FXML private TextField costTf;
 
 
-    @FXML private Button removeBtn;
 
     private String getAirline(){return airlineTf.getText();}
     private int getFlightNo(){return Integer.parseInt(flightNoTf.getText());}
@@ -33,7 +31,7 @@ public class ModifyFlightsController extends Controller<Agency>{
              
     }
 
-    public void initialize() throws Exception{
+    @FXML private void initialize() throws Exception{
         try{
             airlineTf.textProperty().addListener((o, oldTxt, newText)-> updateButton());
             flightNoTf.textProperty().addListener((o, oldTxt, newText)-> updateButton());
@@ -47,12 +45,13 @@ public class ModifyFlightsController extends Controller<Agency>{
         }
     }
     public void updateButton(){
-        addBtn.setDisable(dataInAddFields());
+        modifyFlightBtn.setDisable(dataInAddFields());
         
     }
     public void updateRemoveButton(){
-        removeBtn.setDisable(dataInRemoveFields());
+        modifyFlightBtn.setDisable(dataInRemoveFields());
     }
+    
     private Boolean dataInAddFields(){
         return airlineTf.getText().isEmpty() || 
                 flightNoTf.getText().isEmpty() ||
@@ -74,7 +73,7 @@ public class ModifyFlightsController extends Controller<Agency>{
     @FXML private void handleAdd() throws Exception{
         try{
             Flight flight = new Flight(getAirline(), getFlightNo(), getTakeoff(), getLanding(), getCost());
-            getAgency().getFlights().getFlights().add(flight);
+            model.getFlights().getFlights().add(flight);
             stage.close();
         }catch(Exception e){
             ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));
@@ -83,7 +82,7 @@ public class ModifyFlightsController extends Controller<Agency>{
     }
     @FXML private void handleRemove() throws Exception{
         try{
-            getAgency().getFlights().removeFlight(getAgency().getFlights()
+            model.getFlights().removeFlight(getAgency().getFlights()
                     .getFlight(getTakeoff(), getLanding()));
             stage.close();
         }catch(Exception e){

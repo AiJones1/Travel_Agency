@@ -1,7 +1,40 @@
 package controller.Destinations;
 
+import model.Destination;
+import au.edu.uts.ap.javafx.Controller;
+import model.Agency;
+import javafx.fxml.*;
+import javafx.scene.control.*;
 
-public class DisplayDestinationsController  {
+public class DisplayDestinationsController extends Controller<Agency> {
     
-    
+    @FXML private Button closeBtn;
+    @FXML private TableView<Destination> destinationsTv;
+    @FXML private TableColumn<Destination, String> nameClm;
+    @FXML private TableColumn<Destination, String> countryClm;
+    @FXML private TextField searchCountryTf;
+
+    @FXML private void initialize(){
+        if(model!=null){
+            destinationsTv.setItems(model.getDestinations().getDestinations());
+
+            nameClm.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+            countryClm.setCellValueFactory(cellData -> cellData.getValue().countryProperty());
+
+            searchCountryTf.textProperty().addListener((o, oldtxt, newtxt)-> updateTv());
+        }
+    }
+
+
+
+    @FXML public void handleClose(){
+        stage.close();
+    }
+    public void updateTv(){
+        destinationsTv.setItems(model.getDestinations().getFilteredDestinations(searchCountryTf.getText()));
+    }
+
+    public Agency getAgency(){
+        return model;
+    }
 }

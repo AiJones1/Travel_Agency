@@ -8,6 +8,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import model.Agency;
+import model.Trip;
 import model.Exceptions.ErrorModel;
 
 public class AgencyController extends Controller<Agency>{
@@ -36,8 +37,7 @@ public class AgencyController extends Controller<Agency>{
             flightsStage.getIcons().add(new Image("/image/flights_icon.png"));
             ViewLoader.showStage(model, "/view/Flights/ExploreFlightsView.fxml", "Prog2 Travel Agency", flightsStage);
         }catch(Exception e){
-            ErrorModel error1 = new ErrorModel(e, "Mission Failed");
-            ViewLoader.showErrorWindow(error1);
+            ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));
         }
         
     }
@@ -47,8 +47,7 @@ public class AgencyController extends Controller<Agency>{
             destinationsStage.getIcons().add(new Image("/image/destinations_icon.png"));            
             ViewLoader.showStage(model, "/view/Destinations/ExploreDestinationsView.fxml", "Explore Destinations", destinationsStage);
         }catch(Exception e){
-            ErrorModel error2 = new ErrorModel(e, "Mission Failed");
-            ViewLoader.showErrorWindow(error2);
+            ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));
 
         }
     }
@@ -58,15 +57,15 @@ public class AgencyController extends Controller<Agency>{
             tripStage.getIcons().add(new Image("/image/trip_icon.png"));
             ViewLoader.showStage(model, "/view/Trip/BookTripView.fxml", "Book a Trip", tripStage);
         }catch(Exception e){
-            ErrorModel error2 = new ErrorModel(e, "Mission Failed");
-            ViewLoader.showErrorWindow(error2);
-
+            ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));
         }
     }
 
     @FXML private void handleClose(){
         stage.close();
     }
+
+
 
     public Agency getAgency(){
         return model;
