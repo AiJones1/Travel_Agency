@@ -22,6 +22,7 @@ fx:controller="controller.Destinations.DisplayDestinationsController">
     <Separator/>
         <Label text="Filtered Destinations" styleClass="heading"/>
     <Separator/>
+    <Label text="Country"/>
     <HBox alignment="center">
         <TextField fx:id="searchCountryTf" HBox.hgrow="always"/>
     </HBox>

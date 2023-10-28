@@ -2,13 +2,14 @@ package controller.Flights;
 
 
 import model.Flight;
+import model.Flights;
 import au.edu.uts.ap.javafx.Controller;
 import javafx.fxml.*;
 import javafx.scene.control.*;
 import model.Agency;
 
 
-public class DisplayFlightsController extends Controller<Agency> {
+public class DisplayFlightsController extends Controller<Flights> {
     
 
 
@@ -27,7 +28,7 @@ public class DisplayFlightsController extends Controller<Agency> {
     @FXML public void initialize(){
         if(model!=null){
 
-        flightsTv.setItems(model.getFlights().getFlights());
+        flightsTv.setItems(model.getFlights());
         
         airlineClm.setCellValueFactory(cellData -> cellData.getValue().airlineProperty());
         flightNoClm.setCellValueFactory(cellData -> cellData.getValue().flightNumberProperty().asString());
@@ -40,10 +41,7 @@ public class DisplayFlightsController extends Controller<Agency> {
         }
     }
     public void updateTv(){
-        flightsTv.setItems(model.getFlights().getFilteredFlights(searchCountryTf.getText()));
-    }
-    public Agency getAgency(){
-        return model;
+        flightsTv.setItems(model.getFilteredFlights(searchCountryTf.getText()));
     }
 
     @FXML private void handleClose(){

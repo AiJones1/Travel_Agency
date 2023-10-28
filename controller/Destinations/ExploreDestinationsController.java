@@ -30,7 +30,7 @@ public class ExploreDestinationsController extends Controller<Agency>{
         try{
             Stage viewDestinationStage = new Stage();
             viewDestinationStage.getIcons().add(new Image("/image/destinations_icon.png"));
-            ViewLoader.showStage(model, "/view/Destinations/DisplayDestinationsView.fxml","Destinations",viewDestinationStage);
+            ViewLoader.showStage(model.getDestinations(), "/view/Destinations/DisplayDestinationsView.fxml","Destinations",viewDestinationStage);
         }catch(Exception e){
             ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));
         }
@@ -40,9 +40,9 @@ public class ExploreDestinationsController extends Controller<Agency>{
         try{
             Stage viewFilteredDestinationStage = new Stage();
             viewFilteredDestinationStage.getIcons().add(new Image("/image/destinations_icon.png"));
-            ViewLoader.showStage(model, "/view/Destinations/DisplayFilteredDestinationsView.fxml","Destinations",viewFilteredDestinationStage);
+            ViewLoader.showStage(model.getDestinations(), "/view/Destinations/DisplayFilteredDestinationsView.fxml","Destinations",viewFilteredDestinationStage);
         }catch(Exception e){
-            e.printStackTrace();
+
             ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));
         }
     }
@@ -51,7 +51,7 @@ public class ExploreDestinationsController extends Controller<Agency>{
         try{
             Stage addDestinationStage = new Stage();
             addDestinationStage.getIcons().add(new Image("/image/destinations_icon.png"));
-            ViewLoader.showStage(getAgency(), "/view/Destinations/AddDestinationView.fxml","Add Destination", addDestinationStage);
+            ViewLoader.showStage(model.getDestinations(), "/view/Destinations/AddDestinationView.fxml","Add Destination", addDestinationStage);
         }catch(Exception e){
             ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));
         }
@@ -63,7 +63,7 @@ public class ExploreDestinationsController extends Controller<Agency>{
         try{
             Stage removeDestinationStage = new Stage();
             removeDestinationStage.getIcons().add(new Image("/image/destinations_icon.png"));
-            ViewLoader.showStage(getAgency(), "/view/Destinations/RemoveDestinationView.fxml","Remove Destination", removeDestinationStage);
+            ViewLoader.showStage(model.getDestinations(), "/view/Destinations/RemoveDestinationView.fxml","Remove Destination", removeDestinationStage);
         }catch(Exception e){
             ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));
         }

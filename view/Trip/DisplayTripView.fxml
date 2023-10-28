@@ -4,13 +4,38 @@
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.geometry.Insets?>  
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="700.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" styleClass="background" prefHeight="700.0" prefWidth="600.0" spacing="20" 
+xmlns:fx="http://javafx.com/fxml/1"
+fx:controller="controller.Trip.DisplayTripController">
+
+    <ImageView fitWidth="790" fitHeight="225">
+        <image>
+            <Image url="/image/trip.png"/>
+        </image>
+    </ImageView>
+
+    <Separator/>
+        <Label text="Your Trip" styleClass="heading" />
+    <Separator/>
+
+    <ListView fx:id="itineryLv">
+        <placeholder>
+            <Label text="Nothing in Itinery"/>
+        </placeholder>
+    </ListView>
+
+    <HBox alignment="bottom_center">
+        <Button fx:id="viewIndividualBtn" text="View Individual" onAction="#handleViewIndividual" MaxWidth="500" HBox.hgrow="always"/>
+        <Button fx:id="closeBtn" text="Close" onAction="#handleClose" MaxWidth="500" HBox.hgrow="always"/>
+    </HBox>
        
+    <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets>  
 </VBox>

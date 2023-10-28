@@ -34,7 +34,7 @@ public class ExploreFlightsController extends Controller<Agency>{
         try{
             Stage viewFlightsStage = new Stage();
             viewFlightsStage.getIcons().add(new Image("/image/flights_icon.png"));
-            ViewLoader.showStage(model, "/view/Flights/DisplayFlightsView.fxml","Display Flights", viewFlightsStage);
+            ViewLoader.showStage(model.getFlights(), "/view/Flights/DisplayFlightsView.fxml","Display Flights", viewFlightsStage);
         }catch(Exception e){
             ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));
         }
@@ -44,7 +44,7 @@ public class ExploreFlightsController extends Controller<Agency>{
         try{
             Stage viewFilteredFlightsStage = new Stage();
             viewFilteredFlightsStage.getIcons().add(new Image("/image/flights_icon.png"));
-            ViewLoader.showStage(model, "/view/Flights/DisplayFilteredFlightsView.fxml","Display Flights Filtered", viewFilteredFlightsStage);
+            ViewLoader.showStage(model.getFlights(), "/view/Flights/DisplayFilteredFlightsView.fxml","Display Flights Filtered", viewFilteredFlightsStage);
         }catch(Exception e){
             ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));
         }
@@ -54,7 +54,7 @@ public class ExploreFlightsController extends Controller<Agency>{
         try{
             Stage addFlightStage = new Stage();
             addFlightStage.getIcons().add(new Image("/image/flights_icon.png"));
-            ViewLoader.showStage(model, "/view/Flights/AddFlightView.fxml","Add Flight", addFlightStage);
+            ViewLoader.showStage(model.getFlights(), "/view/Flights/AddFlightView.fxml","Add Flight", addFlightStage);
         }catch(Exception e){
             ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));
         }
@@ -64,7 +64,7 @@ public class ExploreFlightsController extends Controller<Agency>{
         try{
             Stage removeFlightStage = new Stage();
             removeFlightStage.getIcons().add(new Image("/image/flights_icon.png"));
-            ViewLoader.showStage(model, "/view/Flights/RemoveFlightView.fxml","Remove Flight", removeFlightStage);
+            ViewLoader.showStage(model.getFlights(), "/view/Flights/RemoveFlightView.fxml","Remove Flight", removeFlightStage);
         }catch(Exception e){
             ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));
         }

@@ -5,15 +5,13 @@ import au.edu.uts.ap.javafx.ViewLoader;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import model.Agency;
 import model.Destination;
+import model.Destinations;
 import model.Exceptions.ErrorModel;
 
-public class ModifyDestinationsController extends Controller<Agency> {
+public class ModifyDestinationsController extends Controller<Destinations> {
     
-    public ModifyDestinationsController(){
 
-    }
     private String getDestinationName(){return destinationNameTf.getText();}
     private String getDestinationCountry(){return destinationCountryTf.getText();}
 
@@ -27,13 +25,11 @@ public class ModifyDestinationsController extends Controller<Agency> {
         if(model!=null){
             destinationNameTf.textProperty().addListener((o, oldName, newName)-> updateButton());
             destinationCountryTf.textProperty().addListener((o, oldCountry, newCountry)->updateButton());
-
         }
     }
 
     public void updateButton(){
         modifyDestinationBtn.setDisable(dataInAllTextFields());
-
     }
 
     public Boolean dataInAllTextFields(){
@@ -42,14 +38,13 @@ public class ModifyDestinationsController extends Controller<Agency> {
     }
 
     @FXML public void handleClose(){
-        stage.close();
-        
+        stage.close();     
     }
 
     @FXML public void handleAddDestination(){
         try{
             Destination destination = new Destination(getDestinationName(),getDestinationCountry());
-            model.getDestinations().addDestination(destination);
+            model.addDestination(destination);
             stage.close();
         }catch(Exception e){
             ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));
@@ -58,15 +53,11 @@ public class ModifyDestinationsController extends Controller<Agency> {
 
     @FXML public void handleRemoveDestination(){
         try{
-            model.getDestinations().removeDestination(model.getDestinations().destination(getDestinationName(), getDestinationCountry()));
+            model.removeDestination(model.destination(getDestinationName(), getDestinationCountry()));
             stage.close();
         }catch(Exception e){
             ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));
         }
     }
-
-
-
-
 
 }

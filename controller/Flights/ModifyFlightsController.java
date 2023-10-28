@@ -7,9 +7,10 @@ import javafx.fxml.*;
 import javafx.scene.control.*;
 import model.Agency;
 import model.Flight;
+import model.Flights;
 import model.Exceptions.ErrorModel;
 
-public class ModifyFlightsController extends Controller<Agency>{
+public class ModifyFlightsController extends Controller<Flights>{
 
 
     @FXML private Button modifyFlightBtn;
@@ -63,17 +64,14 @@ public class ModifyFlightsController extends Controller<Agency>{
         return takeoffTf.getText().isEmpty() ||
                 landingTf.getText().isEmpty();
     }
-    public Agency getAgency(){
-        return model;
-    }
-   
+
     @FXML private void handleClose(){
         stage.close();
     }
     @FXML private void handleAdd() throws Exception{
         try{
             Flight flight = new Flight(getAirline(), getFlightNo(), getTakeoff(), getLanding(), getCost());
-            model.getFlights().getFlights().add(flight);
+            model.getFlights().add(flight);
             stage.close();
         }catch(Exception e){
             ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));
@@ -82,7 +80,7 @@ public class ModifyFlightsController extends Controller<Agency>{
     }
     @FXML private void handleRemove() throws Exception{
         try{
-            model.getFlights().removeFlight(getAgency().getFlights()
+            model.removeFlight(model
                     .getFlight(getTakeoff(), getLanding()));
             stage.close();
         }catch(Exception e){

@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import model.Agency;
 import model.Trip;
+// import model.Trip;
 import model.Exceptions.ErrorModel;
 
 public class AgencyController extends Controller<Agency>{
@@ -55,7 +56,8 @@ public class AgencyController extends Controller<Agency>{
         try{
             Stage tripStage = new Stage();
             tripStage.getIcons().add(new Image("/image/trip_icon.png"));
-            ViewLoader.showStage(model, "/view/Trip/BookTripView.fxml", "Book a Trip", tripStage);
+            Trip trip = new Trip(getAgency());
+            ViewLoader.showStage(trip, "/view/Trip/BookTripView.fxml", "Book a Trip", tripStage);
         }catch(Exception e){
             ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));
         }

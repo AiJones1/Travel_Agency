@@ -45,6 +45,7 @@ public class Trip {
         return FXCollections.<Itinery>observableArrayList(objects);
     }
 
+
     public Flights getFlights() {
         return this.flights;
     }
