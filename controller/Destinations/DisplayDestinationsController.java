@@ -3,7 +3,6 @@ package controller.Destinations;
 import model.Destination;
 import model.Destinations;
 import au.edu.uts.ap.javafx.Controller;
-import model.Agency;
 import javafx.fxml.*;
 import javafx.scene.control.*;
 

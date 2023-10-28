@@ -6,7 +6,6 @@ import model.Flights;
 import au.edu.uts.ap.javafx.Controller;
 import javafx.fxml.*;
 import javafx.scene.control.*;
-import model.Agency;
 
 
 public class DisplayFlightsController extends Controller<Flights> {

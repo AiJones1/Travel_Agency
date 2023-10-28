@@ -5,7 +5,6 @@ import au.edu.uts.ap.javafx.Controller;
 import au.edu.uts.ap.javafx.ViewLoader;
 import javafx.fxml.*;
 import javafx.scene.control.*;
-import model.Agency;
 import model.Flight;
 import model.Flights;
 import model.Exceptions.ErrorModel;

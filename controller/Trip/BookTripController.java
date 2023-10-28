@@ -1,21 +1,18 @@
 package controller.Trip;
 
-import java.util.Observable;
 
 import au.edu.uts.ap.javafx.Controller;
 import au.edu.uts.ap.javafx.ViewLoader;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import model.Agency;
-import model.Itinery;
 import model.Trip;
 import model.Exceptions.ErrorModel;
 
 
 public class BookTripController extends Controller<Trip>{
+
 
 
     @FXML private Label welcomeTxt;
@@ -24,6 +21,7 @@ public class BookTripController extends Controller<Trip>{
     @FXML private Button addConnectingFlightsBtn;
     @FXML private Button viewTripBtn;
     @FXML private Button closeBtn;
+
     public BookTripController(){
 
     }
@@ -31,6 +29,8 @@ public class BookTripController extends Controller<Trip>{
     @FXML public void initialize(){
         if(model!=null){
             welcomeTxt.setText(model.getAgency().getLoggedInUser().toString()+"Trip section");
+
+
 
         }
     }
@@ -74,5 +74,7 @@ public class BookTripController extends Controller<Trip>{
     @FXML private void handleClose(){
         stage.close();
     }
+
+
 
 }
