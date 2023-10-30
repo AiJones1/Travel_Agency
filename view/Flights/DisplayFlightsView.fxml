@@ -15,16 +15,15 @@
 xmlns:fx="http://javafx.com/fxml/1"
 fx:controller="controller.Flights.DisplayFlightsController">
        
-    <ImageView fitWidth="590" fitHeight="175"> 
+    <ImageView fitWidth="600" fitHeight="175"> 
       <image>
         <Image url="/image/flight.png"/>
       </image>
     </ImageView>
-    <TextField fx:id="searchCountryTf" visible="false"/>
+
 <Separator/>
     <Label text="Flights" styleClass="heading"/>
 <Separator/>
-
     <TableView fx:id="flightsTv" prefWidth="400" prefHeight="600">
         <placeholder><Label text="No Flights"/></placeholder>
         <columns>
@@ -50,9 +49,11 @@ fx:controller="controller.Flights.DisplayFlightsController">
 
       <GridPane alignment="BOTTOM_CENTER">
       <columnConstraints>
-        <ColumnConstraints percentWidth="90" hgrow="ALWAYS"/>
+        <ColumnConstraints percentWidth="100" hgrow="ALWAYS"/>
+
       </columnConstraints>
         <Button fx:id="closeBtn" text="Close" GridPane.columnIndex="0" onAction="#handleClose" maxWidth="Infinity"/>
+        <TextField fx:id="searchCountryTf" visible="false"/>
       </GridPane>
 
     <stylesheets>

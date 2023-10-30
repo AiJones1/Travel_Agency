@@ -27,7 +27,7 @@
         <Separator/>
 
       <Label fx:id="exceptionLabel" styleClass="errorLabel"/>
-      <Label fx:id="errorMessageLabel"/>
+      <Label alignment="center" fx:id="errorMessageLabel"/>
 
       <GridPane alignment="BOTTOM_CENTER">
       <columnConstraints>

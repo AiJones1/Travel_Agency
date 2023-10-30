@@ -30,7 +30,7 @@ public class ExploreDestinationsController extends Controller<Agency>{
         try{
             Stage viewDestinationStage = new Stage();
             viewDestinationStage.getIcons().add(new Image("/image/destinations_icon.png"));
-            ViewLoader.showStage(model.getDestinations(), "/view/Destinations/DisplayDestinationsView.fxml","Destinations",viewDestinationStage);
+            ViewLoader.showStage(model.getDestinations(), "/view/Destinations/DisplayDestinationsView.fxml","Display Destinations",viewDestinationStage);
         }catch(Exception e){
             ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));
         }
@@ -40,7 +40,7 @@ public class ExploreDestinationsController extends Controller<Agency>{
         try{
             Stage viewFilteredDestinationStage = new Stage();
             viewFilteredDestinationStage.getIcons().add(new Image("/image/destinations_icon.png"));
-            ViewLoader.showStage(model.getDestinations(), "/view/Destinations/DisplayFilteredDestinationsView.fxml","Destinations",viewFilteredDestinationStage);
+            ViewLoader.showStage(model.getDestinations(), "/view/Destinations/DisplayFilteredDestinationsView.fxml","Display Destinations Filtered",viewFilteredDestinationStage);
         }catch(Exception e){
 
             ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));

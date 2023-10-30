@@ -1,9 +1,7 @@
 package controller.Trip;
 
 
-import java.io.IOException;
-import java.util.Observable;
-
+import java.util.InputMismatchException;
 import au.edu.uts.ap.javafx.Controller;
 import au.edu.uts.ap.javafx.ViewLoader;
 import javafx.collections.ListChangeListener;
@@ -16,6 +14,7 @@ import model.Destinations;
 import model.Flights;
 import model.Itinery;
 import model.Trip;
+import model.Exceptions.ErrorModel;
 
 public class DisplayTripController extends Controller<Trip> {
 
@@ -47,19 +46,43 @@ public class DisplayTripController extends Controller<Trip> {
         }
     }
 
-    @FXML private void handleViewIndividual() throws IOException{
+    @FXML private void handleViewIndividual() throws Exception{
         ObservableList<Itinery> selectedItems = itineryLv.getSelectionModel().getSelectedItems();
-        model.getFlights().getClass();
-        Destinations destinations = new Destinations(selectedItems);
-        // Flights flights = new Flights(selectedItems);
-        for(Itinery i: selectedItems){
-            System.out.println(i.getClass());
+        if(selectedItems.isEmpty()){
+            // Based on specifications the button didn't need to be disabled with no selection
+            // Simply exiting the function if nothing has been selected, otherwise this code
+            // would open an empty destinations page
+            return;
         }
+        
+        int destinationsCount =0;
+        for(Itinery i: selectedItems){
+            if(i.getClass()==model.getDestinations().getDestinations().get(0).getClass()){
+                destinationsCount++;
+            }
+        }
+        if(destinationsCount == selectedItems.size()){
+            try{
+            Destinations destinations = new Destinations(selectedItems);
+            Stage viewDestinationStage = new Stage();
+            viewDestinationStage.getIcons().add(new Image("/image/destinations_icon.png"));
+            ViewLoader.showStage(destinations, "/view/Destinations/DisplayDestinationsView.fxml", "View Destinations", viewDestinationStage);                    
+            }catch(Exception e){
+                ViewLoader.showErrorWindow(new ErrorModel(new InputMismatchException(), "Can't display flight and destination on the same page"));                   
+            }
 
-        Stage viewDestinationStage = new Stage();
-        viewDestinationStage.getIcons().add(new Image("/image/destinations_icon.png"));
-        ViewLoader.showStage(destinations, "/view/Destinations/DisplayDestinationsView.fxml", "De", viewDestinationStage);
+        }else{
+            try{
+                Flights flights = new Flights(selectedItems);
+                Stage viewFlightsStage = new Stage();
+                viewFlightsStage.getIcons().add(new Image("/image/flights_icon.png"));
+                ViewLoader.showStage(flights, "/view/Flights/DisplayFlightsView.fxml", "View Flights", viewFlightsStage);
+            }catch(Exception e){
+                ViewLoader.showErrorWindow(new ErrorModel(new InputMismatchException(), "Can't display flight and destination on the same page"));                   
+            }
 
+        }         
+        
     }
 
     @FXML private void handleClose(){

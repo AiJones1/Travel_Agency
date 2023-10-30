@@ -15,12 +15,12 @@
 xmlns:fx="http://javafx.com/fxml/1"
 fx:controller="controller.Destinations.DisplayDestinationsController">
 
-    <ImageView fitWidth="690" fitHeight="225">
+    <ImageView fitWidth="600" fitHeight="200">
     <image>
         <Image url="/image/destination.png"/>
     </image>
 </ImageView>
-    <TextField fx:id="searchCountryTf" visible="false"/>
+
 
     <Separator/>
         <Label text="Destinations" styleClass="heading"/>
@@ -41,6 +41,7 @@ fx:controller="controller.Destinations.DisplayDestinationsController">
         <ColumnConstraints percentWidth="100" hgrow="ALWAYS"/>
       </columnConstraints>
         <Button fx:id="closeBtn" text="Close" GridPane.columnIndex="0" onAction="#handleClose" maxWidth="Infinity"/>
+        <TextField fx:id="searchCountryTf" visible="false"/>
       </GridPane>
 
         <stylesheets>

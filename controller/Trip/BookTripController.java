@@ -38,7 +38,7 @@ public class BookTripController extends Controller<Trip>{
         try{
             Stage addTripDestination = new Stage();
             addTripDestination.getIcons().add(new Image("/image/trip_icon.png"));
-            ViewLoader.showStage(model.getDestinations(), "/view/Destinations/AddDestinationView.fxml", "Add Destination", addTripDestination);
+            ViewLoader.showStage(model.getDestinations(), "/view/Destinations/AddDestinationView.fxml", "Add Destination To Trip", addTripDestination);
         }catch(Exception e){
               ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));          
         }
@@ -47,7 +47,7 @@ public class BookTripController extends Controller<Trip>{
         try{
             Stage removeTripDestination = new Stage();
             removeTripDestination.getIcons().add(new Image("/image/trip_icon.png"));
-            ViewLoader.showStage(model.getDestinations(), "/view/Destinations/RemoveDestinationView.fxml", "Remove Destination", removeTripDestination);
+            ViewLoader.showStage(model.getDestinations(), "/view/Destinations/RemoveDestinationView.fxml", "Remove Destination From Trip", removeTripDestination);
         }catch(Exception e){
               ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));          
         }

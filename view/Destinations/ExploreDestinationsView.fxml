@@ -13,7 +13,7 @@
 xmlns:fx="http://javafx.com/fxml/1"
 fx:controller="controller.Destinations.ExploreDestinationsController">
 
-<ImageView fitWidth="790" fitHeight="225">
+<ImageView fitWidth="800" fitHeight="200">
     <image>
         <Image url="/image/destination.png"/>
     </image>

@@ -12,7 +12,7 @@
 <VBox alignment="CENTER" styleClass="background" prefHeight="800.0" prefWidth="600.0" spacing="20" 
 xmlns:fx="http://javafx.com/fxml/1"
 fx:controller="controller.Flights.DisplayFlightsController">
-    <ImageView fitWidth="590" fitHeight="175"> 
+    <ImageView fitWidth="600" fitHeight="175"> 
       <image>
         <Image url="/image/flight.png"/>
       </image>
@@ -23,12 +23,10 @@ fx:controller="controller.Flights.DisplayFlightsController">
 <Separator/>
 
     <Label text="Country"/>
-
     <HBox alignment="center">
         <TextField fx:id="searchCountryTf" HBox.hgrow="always"/>
     </HBox>
-
-    <TableView fx:id="flightsTv" prefWidth="400" prefHeight="600">
+    <TableView fx:id="flightsTv" prefWidth="600" prefHeight="400">
         <placeholder><Label text="No Flights"/></placeholder>
         <columns>
             <TableColumn fx:id="airlineClm" text="Airline" prefWidth="${flightsTv.width*0.2}"/>
@@ -47,7 +45,7 @@ fx:controller="controller.Flights.DisplayFlightsController">
 
       <GridPane alignment="BOTTOM_CENTER">
       <columnConstraints>
-        <ColumnConstraints percentWidth="90" hgrow="ALWAYS"/>
+        <ColumnConstraints percentWidth="100" hgrow="ALWAYS"/>
       </columnConstraints>
         <Button fx:id="closeBtn" text="Close" GridPane.columnIndex="0" onAction="#handleClose" maxWidth="Infinity"/>
       </GridPane>

@@ -36,7 +36,7 @@ public class AgencyController extends Controller<Agency>{
         try{
             Stage flightsStage = new Stage();
             flightsStage.getIcons().add(new Image("/image/flights_icon.png"));
-            ViewLoader.showStage(model, "/view/Flights/ExploreFlightsView.fxml", "Prog2 Travel Agency", flightsStage);
+            ViewLoader.showStage(model, "/view/Flights/ExploreFlightsView.fxml", "Explore Flights", flightsStage);
         }catch(Exception e){
             ViewLoader.showErrorWindow(new ErrorModel(e, e.getMessage()));
         }

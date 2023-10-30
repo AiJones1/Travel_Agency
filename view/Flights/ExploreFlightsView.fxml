@@ -14,7 +14,7 @@
 xmlns:fx="http://javafx.com/fxml/1"
 fx:controller="controller.Flights.ExploreFlightsController">
 
-    <ImageView fitWidth="790" fitHeight="225"> 
+    <ImageView fitWidth="800" fitHeight="225"> 
       <image>
         <Image url="/image/flight.png"/>
       </image>
